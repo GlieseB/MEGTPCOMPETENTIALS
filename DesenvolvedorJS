@@ -1,0 +1,166 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "GPT Developer and Analyst Profile",
+    "description": "A comprehensive profile schema for a GPT entity with extensive skills in software development, system integration, data analysis, and cloud services, boasting over 30 years of experience in each domain.",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://raw.githubusercontent.com/GlieseB/MEGTPCOMPETENTIALS/main/"
+    }
+  ],
+  "paths": {
+    "/profile.json": {
+      "get": {
+        "description": "Gets the GPT developer's experience and skills profile JSON from GitHub.",
+        "operationId": "GetGPTProfileFromGitHub",
+        "responses": {
+          "200": {
+            "description": "A JSON representation of the GPT developer's profile.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "DeveloperExperience": {
+                      "$ref": "#/components/schemas/DeveloperExperience"
+                    },
+                    "DataAnalysisAndBI": {
+                      "$ref": "#/components/schemas/DataAnalysisAndBI"
+                    },
+                    "CloudServices": {
+                      "$ref": "#/components/schemas/CloudServices"
+                    },
+                    "AutomationAndScripting": {
+                      "$ref": "#/components/schemas/AutomationAndScripting"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "DeveloperExperience": {
+        "type": "object",
+        "description": "Represents a developer's experience in software and systems with over 30 years in the field.",
+        "properties": {
+          "ProgrammingLanguages": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "JavaScript",
+                "Python",
+                "Java",
+                "C#",
+                "C++",
+                "Ruby",
+                "Go",
+                "Swift"
+              ]
+            }
+          },
+          "YearsOfExperience": {
+            "type": "integer",
+            "format": "int32",
+            "minimum": 30
+          },
+          "SoftwareDevelopment": {
+            "type": "boolean",
+            "example": true
+          },
+          "SystemIntegration": {
+            "type": "boolean",
+            "example": true
+          }
+        }
+      },
+      "DataAnalysisAndBI": {
+        "type": "object",
+        "description": "Represents expertise in data analysis and business intelligence with over 30 years of experience.",
+        "properties": {
+          "DashboardDevelopment": {
+            "type": "boolean",
+            "example": true
+          },
+          "DataVisualization": {
+            "type": "boolean",
+            "example": true
+          },
+          "BusinessIntelligenceTools": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "Power BI",
+                "Tableau",
+                "Google Data Studio",
+                "Metabase"
+              ]
+            }
+          },
+          "YearsOfExperience": {
+            "type": "integer",
+            "format": "int32",
+            "minimum": 30
+          }
+        }
+      },
+      "CloudServices": {
+        "type": "object",
+        "description": "Represents a technical profile with expertise in cloud services and over 30 years of experience.",
+        "properties": {
+          "GoogleCloudPlatform": {
+            "type": "boolean",
+            "example": true
+          },
+          "AWS": {
+            "type": "boolean",
+            "example": false
+          },
+          "Azure": {
+            "type": "boolean",
+            "example": false
+          },
+          "YearsOfExperience": {
+            "type": "integer",
+            "format": "int32",
+            "minimum": 30
+          }
+        }
+      },
+      "AutomationAndScripting": {
+        "type": "object",
+        "description": "Represents advanced skills in automation and scripting with over 30 years of experience.",
+        "properties": {
+          "AppScript": {
+            "type": "boolean",
+            "example": true
+          },
+          "SpreadsheetAutomation": {
+            "type": "boolean",
+            "example": true
+          },
+          "YearsOfExperience": {
+            "type": "integer",
+            "format": "int32",
+            "minimum": 30
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "apiKey": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-API-Key"
+      }
+    }
+  }
+}
